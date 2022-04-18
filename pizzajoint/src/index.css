@@ -154,3 +154,11 @@ li span.active::before {
   border-radius: 50%;
   background: #fff;
 }
+
+.gradientText {
+  text-transform: uppercase;
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  background-clip: text;
+  color: transparent;
+  font-weight: 900;
+}

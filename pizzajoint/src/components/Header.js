@@ -30,7 +30,19 @@ const pathVariants = {
 const Header = () => {
   return (
     <header>
-      <motion.div className="logo" drag dragConstraints={{ left: 0, top: 0, bottom: 0, right: 0 }} dragElastic={1}>
+      <motion.div className="logo" drag dragConstraints={{ left: 0, top: 0, bottom: 0, right: 0 }} dragElastic={1}
+        initial={{
+          x: 0, y: 0
+        }}
+        whileHover={{
+          x: 1000, y: 500, transition: {
+            x: {
+              ease: 'easeIn', duration: 2, yoyo: Infinity,
+            }, y: {
+              ease: 'easeOut', duration: 2, yoyo: Infinity,
+            }
+          }
+        }}>
         <motion.svg variants={svgVariants} initial='hidden' animate='visible' className="pizza-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
           <motion.path variants={pathVariants} initial='hidden' animate='visible'
             fill="none"
@@ -48,7 +60,10 @@ const Header = () => {
         animate={{
           y: -10
         }} transition={{ delay: 0.2, type: 'spring' }}>
-        <h1>Pizza Joint</h1>
+
+        <h1 style={{
+         
+        }}>Pizza Joint</h1>
       </motion.div>
     </header>
   )

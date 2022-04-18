@@ -34,16 +34,19 @@ const Home = () => {
   }
   return (
     <motion.div className="home container" variants={containerVariants} initial="hidden" animate='visible' exit='exit'>
-      <motion.h2 >
-        <motion.div
-          animate={{
-            scale: [1, 2, 2, 1, 1],
-            rotate: [0, 0, 270, 270, 0],
-            borderRadius: ["20%", "20%", "50%", "50%", "20%"],
-          }}
-        />
+   
+      <motion.h2 className='gradientText' >
+
         Welcome to Pizza Joint
       </motion.h2>
+      <motion.div
+        animate={{
+          scale: [1, 2, 2, 1, 1],
+          rotate: [0, 0, 270, 270, 0],
+          borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+        }}
+
+      />
       <Link to="/base">
         <motion.button variants={buttonVariants} whileHover='hover' >
           Create Your Pizza
